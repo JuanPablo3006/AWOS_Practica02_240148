@@ -11,3 +11,8 @@ En la siguiente práctica se realizaran pequeños ejercicios de repaso para comp
 <p align="justify">
 Esta practica será desarrollada con estructuras ramales. Para que el estudiante comience con la manipulación correcta de ramas en el contexto de control de versiones y desarrollo colaborativo utilizando Git y GitHub.
 </p>
+
+#### Tablas de ejercicios
+|No.|Descripcioón|Potenciador|Estatus|
+| --- | --- | --- | --- |
+|1.| Declaración de Variables| 1 | 💻En progreso |
