@@ -1,89 +1,110 @@
-html{
+/* Reset y configuraciones base */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-size: 62.5%;
 }
 
-body{
-    font-size: 1.6rem;
-    font-family: 'lato','sans-serif';
-    background-color: rgb(125, 195, 144);
-}
-/*Estas propiedades son el antes y el despues de box sizing */
-,:before,*::after{
-    box-sizing: inherit;
-}
-
-header{
-    padding: 3rem 0;
-}
-
-header h1{
-    text-align: center;
-    color: rgb(10, 20, 11);
-    font-size: 6rem;
+/* Variables CSS para colores y estilos */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #1abc9c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --gray-color: #7f8c8d;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
 }
 
-header p{
-    color: rgb(210, 74, 74);
-    text-align: center;
-    font-size: 3.2 rem;
-
+/* Estilos generales */
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--dark-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-header p a{
-    text-decoration: none ;
-    color: rgb(217, 255, 0);
-}
-
-.DOM{
-    max-width: 120rem;
-    margin: 0  auto;
-}
-
-.DOM h2{
-    color: rgb(93, 32, 32);
-    text-align: center;
-}
-
-.DOM nav a{
-    color: aliceblue;
-    font-size: 20 px;
-    text-decoration: none;
-    margin-right: 10px;
-}
-
-.DOM p{
-    color: blue;
-    font-size: 20px;
-}
-
-.DOM #formulario{
-    max-width: 500px;
-    margin: 0 auto;
-
-}
-
-.DOM #formulario input{
-    display:block;
+/* Contenedor principal */
+body > header {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 50px;
+    max-width: 900px;
     width: 100%;
-    border: none;
-    margin-bottom: 2rem;
-    padding: 2rem;
-    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
 }
 
-.alerta{
-    padding: 1rem;
-    text-align: center;
-    color: azure;
-    text-transform: uppercase;
-    font-size: 20px;
+/* Efecto decorativo superior */
+body > header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
 }
 
-.alerta.error{
-    background-color: red;
+/* T��tulo principal */
+h1 {
+    color: var(--primary-color);
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--light-color);
+    position: relative;
 }
 
-.alerta.exito{
-    background-color: green;
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 120px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+/* Subt��tulos y p��rrafos */
+p {
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+    color: var(--gray-color);
+}
+
+strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Estilos espec��ficos para cada secci��n */
+p:has(strong:first-child) {
+    font-size: 1.2rem;
+    padding: 15px;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Informaci��n del docente */
+p:nth-of-type(2) {
+    border-left-color: var(--accent-color);
+}
+
+/* Informaci��n del estudiante */
+p:nth-of-type(3) {
+    background-color: rgba(26, 188, 156, 0.1);
+    border-left-color: var(--accent-color);
+    margin-top: 30px
 }

@@ -15,4 +15,5 @@ Esta practica será desarrollada con estructuras ramales. Para que el estudiante
 #### Tablas de ejercicios
 |No.|Descripcioón|Potenciador|Estatus|
 | --- | --- | --- | --- |
-|1.| Declaración de Variables| 1 | 💻En progreso |
+|1.| Declaración de Variables| 1 | 💻 Finalizado |
+|2.| Tipos de Datos| 8 | 💻 En progreso |
