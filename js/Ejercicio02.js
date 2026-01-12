@@ -91,12 +91,12 @@ console.log(`Los valores de las variables declaradas para los datos de la propie
     ID del Usuario = ${userID_Owner},
     Precio de la propiedad = ${priceProperty},
     Latitud (GPS) = ${latGPS},
-    Longitud (GPS) = ${longGGPS}, 
+    Longitud (GPS) = ${longGPS}, 
     Altitud (GPS) = ${altGPS}`);
 
 console.log(`Los tipos de datos de las variables declaradas para los datos de la propiedad son: 
     ID del Usuario = ${typeof(userID_Owner)},
     Precio de la propiedad = ${typeof(priceProperty)},
     Latitud (GPS) = ${typeof(latGPS)},
-    Longitud (GPS) = ${typeof(longGGPS)}, 
+    Longitud (GPS) = ${typeof(longGPS)}, 
     Altitud (GPS) = ${typeof(altGPS)}`);
