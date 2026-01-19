@@ -123,3 +123,54 @@ lastLogin = new Date("2025/12/31");
 console.log("Test 2 - Fecha de ultimo acceso es diferente a la fecha de hoy");
 console.log(`La fecha del último acceso es: ${lastLogin}`);
 console.log(`El usuario logeado es: ${isNewUser()? "Nuevo usuario":"Usuario Antiguo."}`);
+
+//6. Funciones Anónimas con Parametrós (Version Arrow o Lambda)
+
+const sumar = (a,b) =>{
+    let resultado = a+b;
+    return resultado;
+}
+
+console.warn("6. Funciones Anónima con Parametros")
+console.log(`El resultado de la suma de 15 + 83 es: ${sumar(15,83)}`);
+
+/*Cuando la funcion anónima tiene solo una línea de operación se puede usar una version
+simplificada que no usa {} llaves, ni la palabra reservada (return)*/
+
+const multiplicar = (a,b) => a*b;
+console.log(`El resultado de la multiplicación 15 * 125 es: ${multiplicar(15,125)}`);
+
+//7. Funciones Callback (Regreso de llamado)
+console.warn("7.Funciones Anónimas Callback (respuesta)")
+const recoverPassword = function(email, callback)
+{
+
+    //Generamos el código a enviar al usuario.
+    const recoveryCode = Math.floor(1000000 + Math.random()*900000)
+
+    console.log(`
+        =======================================================================
+        Solicitud de recuperación recibida
+        Correo del Usario solicitante: ${email}
+        Generando Código de Recupeación...
+        Código de Seguridad Genrado: ${recoveryCode}
+        Enviando el correo al usuario...
+        Correo enviado a : ${email}, con el código de seguridad: ${recoveryCode}
+        ========================================================================`);
+
+
+//definiendo la respuesta del siatema
+const response ={
+    status: "OK",
+    message: "Código de recuperación enviado satisfactoriamente."
+};
+
+callback(response);
+};
+
+//Invocacion de una función callback
+recoverPassword("marco@gmail.com",
+    function(SystemResponse){
+        console.log("Respuesta del sistema: ");
+        console.log(SystemResponse.message);
+    });
