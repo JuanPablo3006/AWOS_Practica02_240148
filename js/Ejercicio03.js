@@ -123,3 +123,53 @@ lastLogin = new Date("2025/12/31");
 console.log("Test 2 - Fecha de ultimo acceso es diferente a la fecha de hoy");
 console.log(`La fecha del último acceso es: ${lastLogin}`);
 console.log(`El usuario logeado es: ${isNewUser()? "Nuevo usuario":"Usuario Antiguo."}`);
+
+// 6. Funciones anonimas con parametros (Version Arrow o lambda)
+
+const sumar = (a, b) => {
+    let resultado = a + b;
+    return resultado;
+}
+
+console.warn("6. Funciones anonimas con parametros");
+console.log(`El resultado de la suma (a + b) es: ${sumar(5, 10)}`);
+
+/* Cuando la funcion anonima tiene solo una linea de operacion se puede usar una version simplificada que no usa ()
+llaves, ni la palabra reservada (return) */
+
+const multiplicar = (a, b) => a * b;
+
+console.log(`El resultado de la suma de 15 * 125 es: ${multiplicar(15, 125)}`);
+// 7. Funciones Callback (Regreso de llamada)
+
+console.warn("7. Funciones Callback (Regreso de llamada)");
+const recoveryPassword = function (email, callback) {
+
+    // Generamos el código a enviar al usuario
+    const recoveryCode = Math.floor(Math.random() * 90000) + 10000; 
+
+    console.log(`--------------------------------------------------
+        Correo del usuario solicitante: ${email}
+        Generando código de recuperación...
+        Código de recuperación generado: ${recoveryCode}
+        Enviando el correo al usuario...
+        Correo enviado a: ${email} con el código: ${recoveryCode}
+    --------------------------------------------------`);
+
+    // Definición de la respuesta del sistema
+    const response = {
+        status: "Ok",
+        message: "Código de restauración enviado satisfactoriamente"
+    };
+
+    // INVOCACIÓN DEL CALLBACK: Se hace dentro de la función principal
+    callback(response);
+};
+
+// Invocación de la función pasando el correo y la función anónima (callback)
+recoveryPassword("240343@utxicotepec.edu.mx", function (res) {
+    console.log("Respuesta recibida del sistema:", res.message);
+    console.log("Estado:", res.status);
+});
+
+// Autor: Juan Pablo Reyes Cruz
