@@ -170,3 +170,5 @@ recoveryPassword("240343@utxicotepec.edu.mx", function (res) {
     console.log("Respuesta recibida del sistema:", res.message);
     console.log("Estado:", res.status);
 });
+
+//Autor: Juan Pablo Reyes Cruz
